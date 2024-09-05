@@ -1,4 +1,11 @@
-﻿html {
+﻿:root {
+    --background-color: #192B33;
+    --blue-color: #31C3BD;
+    --gray-color: #A9BDC8;
+    --orange-color: #F2B137;
+}
+
+html {
   font-size: 14px;
 }
 
@@ -18,7 +25,12 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 60px;
+}
+
+h6 {
+    font-size: 0.75rem; /* Adjust as needed */
 }
 
 /* Container to hold the boxes */
@@ -41,13 +53,17 @@ body {
 }
 
 .score-box:nth-of-type(1) {
-    background-color: blue;
+    background-color: var(--blue-color);
 }
 
 .score-box:nth-of-type(2) {
-    background-color: gray;
+    background-color: var(--gray-color);
 }
 
 .score-box:nth-of-type(3) {
-    background-color: orange;
+    background-color: var(--orange-color);
+}
+
+.score-num {
+    font-weight: 700;
 }
