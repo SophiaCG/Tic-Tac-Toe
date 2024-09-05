@@ -25,15 +25,44 @@ html {
 }
 
 body {
+    background-color: var(--background-color);
     font-family: "Roboto", sans-serif;
-    margin-bottom: 60px;
 }
 
 h6 {
     font-size: 0.75rem; /* Adjust as needed */
 }
 
-/* Container to hold the boxes */
+/* Buttons Grid */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 125px); /* 3 columns, each 100px wide */
+    grid-gap: 20px; /* Space between buttons */
+    justify-content: center;
+    margin: 100px;
+}
+
+.grid-button {
+    width: 125px; /* Button width */
+    height: 125px; /* Button height to make it square */
+    background-color: var(--background-color); /* Button color */
+    color: white; /* Text color */
+    border: 2px solid gray;
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Darker shadow effect */
+}
+
+.grid-button:hover {
+    /*background-color: #223441;*/ /* Darker color on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 1.2); /* Darker shadow on hover */
+}
+
+/* Score Boxes */
 .score-box-container {
     display: flex; /* Use Flexbox to align items horizontally */
     justify-content: center; /* Center the boxes horizontally */
