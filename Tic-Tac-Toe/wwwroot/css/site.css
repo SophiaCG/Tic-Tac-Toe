@@ -1,7 +1,9 @@
 ﻿:root {
     --background-color: #192B33;
     --blue-color: #31C3BD;
+    --secondary-blue-color: #223441;
     --gray-color: #A9BDC8;
+    --secondary-gray-color: #BCCDD4;
     --orange-color: #F2B137;
 }
 
@@ -33,6 +35,101 @@ h6 {
     font-size: 0.75rem; /* Adjust as needed */
 }
 
+a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Keeps the link color consistent with the surrounding text */
+}
+
+.fa-x {
+    color: var(--blue-color);
+}
+
+.fa-o {
+    color: var(--orange-color);
+}
+
+/* Header */
+.container-fluid {
+    display: flex;
+    justify-content: space-around; /* Adjusts spacing between items */
+    align-items: center; /* Vertically center the items */
+    padding: 0 50px; /* Adds space on the left and right of the container */
+    position: relative;
+    margin-top: 20px;
+}
+
+.turn-tracker-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.title-container, .restart-button {
+    margin: 0 15px; /* Adds space between the title and restart button from the center */
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/*    border: 2px solid gray;*/
+}
+
+.title-container h2:nth-of-type(1), .title-container h2:nth-of-type(3) {
+    color: var(--blue-color);
+    margin: 0;
+}
+
+.title-container h2:nth-of-type(2) {
+    color: var(--orange-color);
+    margin: 0;
+}
+
+.turn-tracker-container {
+    width: 150px; /* Button width */
+    height: 50px; /* Button height */
+    background-color: var(--background-color); /* Button color */
+    color: var(--gray-color); /* Text color */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px; /* Add space between the icon and the text */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow effect */
+    padding: 0; /* Ensure no extra padding */
+}
+
+.turn-tracker-image {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.turn-tracker-text {
+    margin: 0; /* Remove any margin on the text */
+}
+
+.restart-button {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    text-align: center;
+    background-color: var(--gray-color);
+}
+
+.restart-button i {
+    font-size: 2rem;
+}
+
+.restart-button:hover {
+    background-color: var(--secondary-gray-color);
+}
+
 /* Buttons Grid */
 .button-grid {
     display: grid;
@@ -46,7 +143,6 @@ h6 {
     width: 125px; /* Button width */
     height: 125px; /* Button height to make it square */
     background-color: var(--background-color); /* Button color */
-    color: white; /* Text color */
     border: 2px solid gray;
     border-radius: 10px; /* Rounded corners */
     font-size: 18px; /* Font size */
@@ -58,27 +154,36 @@ h6 {
 }
 
 .grid-button:hover {
-    /*background-color: #223441;*/ /* Darker color on hover */
+    background-color: var(--secondary-blue-color); /* Darker color on hover */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 1.2); /* Darker shadow on hover */
 }
 
 /* Score Boxes */
+.score-box {
+    display: flex; /* Enable Flexbox on the score-box */
+    flex-direction: column; /* Stack the h6 and h2 vertically */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    text-align: center;
+    width: 250px;
+    height: 75px;
+    border-radius: 10px;
+}
+
+.score-box h6, .score-box h2 {
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+.score-box h2 {
+    font-weight: 700;
+}
+
 .score-box-container {
     display: flex; /* Use Flexbox to align items horizontally */
     justify-content: center; /* Center the boxes horizontally */
     gap: 20px; /* Add spacing between the boxes */
     padding: 20px;
-}
-
-/* Style for each box */
-.score-box {
-    padding: 7px;
-    text-align: center;
-    width: 250px;
-    height: 75px;
-    border-radius: 10px;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
 }
 
 .score-box:nth-of-type(1) {
@@ -91,8 +196,4 @@ h6 {
 
 .score-box:nth-of-type(3) {
     background-color: var(--orange-color);
-}
-
-.score-num {
-    font-weight: 700;
 }
